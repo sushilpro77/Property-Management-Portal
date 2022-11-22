@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: property-management-portal
+  datasource:
+    password: 1
+    url: jdbc:postgresql://localhost:2222/property-management
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8081
+
+cloud:
+  aws:
+    region:
+      static: ap-south-1
+      auto: false
+    stack:
+      auto: false
+    credentials:
+      access-key: AKIAWZGNZWPGC2JUW3G3
+      secret-key: 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
+
+#keycloak:
+#  auth-server-url: http://localhost:8080
+#  realm: Rajiv
+#  resource: login-app
+#  public-client: true
+#  security-constraints[0]:
+#    authRoles[0]: user
+#    securityCollections[0]:
+#      patterns[0]: /products/*
